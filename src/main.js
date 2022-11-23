@@ -1,14 +1,25 @@
-/* 引入express框架 */
-const express = require('express');
+import express from 'express';
+import cors from 'cors';
+import bodyParser from "body-parser";
+import MockRoute from "./routes/mock.js";
+
 const app = express();
 
-/* 引入cors */
-const cors = require('cors');
+/**
+ * 启用所有cors请求
+ * 详细配置参考：https://github.com/expressjs/cors
+ */
 app.use(cors());
-
-app.get('/', (req, res) => {
-    res.send('Hello World!')
-})
+/**
+ * 解析请求体
+ * 详细配置参考：https://github.com/expressjs/body-parser
+ */
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+// 注册路由
+app.use(MockRoute);
 
 /* 监听端口 */
 app.listen(3000, () => {
