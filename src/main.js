@@ -9,7 +9,10 @@ const app = express();
  * 启用所有cors请求
  * 详细配置参考：https://github.com/expressjs/cors
  */
-app.use(cors());
+app.use(cors({
+    "origin": true,
+    "credentials": true,
+}));
 /**
  * 解析请求体
  * 详细配置参考：https://github.com/expressjs/body-parser
