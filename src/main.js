@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import bodyParser from "body-parser";
-import MockRoute from "./routes/mock.js";
+import MockRoute from "./routes/index.js";
 
 const app = express();
 
