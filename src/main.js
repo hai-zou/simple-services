@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import bodyParser from "body-parser";
 import MockRoute from "./routes/index.js";
+import UploadRoute from "./routes/upload.js";
 
 const app = express();
 
@@ -22,7 +23,7 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 // 注册路由
-app.use(MockRoute);
+app.use(MockRoute, UploadRoute);
 
 /* 监听端口 */
 app.listen(3000, () => {
