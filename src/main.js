@@ -4,6 +4,7 @@ import bodyParser from "body-parser";
 import path  from 'path';
 import MockRoute from "./routes/index.js";
 import UploadRoute from "./routes/upload.js";
+import LoginRoute from "./routes/login.js";
 
 const app = express();
 const __dirname = path.resolve();
@@ -25,7 +26,7 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 // 注册路由
-app.use(MockRoute, UploadRoute);
+app.use(MockRoute, UploadRoute, LoginRoute);
 //开放静态资源
 app.use('/uploads', express.static(__dirname + '/uploads'));
 
