@@ -30,6 +30,9 @@ app.use(MockRoute, UploadRoute);
 app.use('/uploads', express.static(__dirname + '/uploads'));
 
 /* 监听端口 */
-app.listen(3000, () => {
-    console.log('——————————服务已启动——————————');
+const port = 3000;
+app.listen(port, () => {
+    const header = "Server is now running at:";
+    const local = `- Local: http://localhost:${port}`;
+    console.log([header, local].join("\n"));
 });
