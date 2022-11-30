@@ -1,32 +1,31 @@
 import express from 'express';
 import jwt from "jsonwebtoken";
+import userList from '../database/users.js';
 
 const route = express.Router();
-// 模拟一个用户数据
-const simulateUser = {
-    email: "xxx@qq.com",
-    password: "123456",
-};
 
 route.post('/login', (req, res) => {
     const { email, password } = req.body;
     if (!email) {
-        res.json({ code: 1, msg: "邮箱不能为空" });
-    } else if (!password) {
-        res.json({ code: 1, msg: "密码不能为空" });
-    } else if (email !== simulateUser.email) {
+        return res.json({ code: 1, msg: "邮箱不能为空" });
+    }
+    if (!password) {
+        return res.json({ code: 1, msg: "密码不能为空" });
+    }
+    const findUser = userList.find(item => item.email === email);
+    if (!findUser) {
         res.json({ code: 1, msg: "邮箱错误" });
-    } else if (password !== simulateUser.password) {
+    } else if (findUser.password !== password) {
         res.json({ code: 1, msg: "密码错误" });
     } else {
         //生成一个token值
-        const token = jwt.sign({ email, password }, "Hizo", {
-            expiresIn: "24h"
-        });
-        res.json({
-            code: 200,
-            data: { token },
-        });
+        const token = jwt.sign(
+            { email, password },
+            "Hizo",
+            { expiresIn: "24h" }
+        );
+        res.cookie("token", token);
+        res.json({ code: 200, msg: "登录成功" });
     }
 });
 
