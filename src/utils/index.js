@@ -10,7 +10,7 @@ export function datapager(page = 1, size = 10, list = []) {
     const startIndex = (pageNum - 1) * pageSize;
     const endIndex = startIndex + pageSize;
     return list.slice(startIndex, endIndex);
-};
+}
 
 export class ResponseResult {
     /**

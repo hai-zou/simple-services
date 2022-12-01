@@ -1,12 +1,12 @@
-import express from 'express';
+import express from "express";
 import jwt from "jsonwebtoken";
-import userList from '../database/users.js';
-import StatusCode from '../constants/status-code.js';
-import { ResponseResult } from '../utils/index.js';
+import userList from "../database/users.js";
+import StatusCode from "../constants/status-code.js";
+import { ResponseResult } from "../utils/index.js";
 
 const route = express.Router();
 
-route.post('/login', (req, res) => {
+route.post("/login", (req, res) => {
     const { email, password } = req.body;
     if (!email) {
         return res.json(new ResponseResult(StatusCode.ERROR, "邮箱不能为空"));
