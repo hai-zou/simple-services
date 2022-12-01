@@ -1,19 +1,21 @@
 import express from 'express';
-import { datapager } from '../utils/index.js';
-import { versionList } from "../database/mock.js";
+import { datapager, ResponseResult } from '../utils/index.js';
+import { DataList } from "../database/mock.js";
 import isLogin from '../utils/is-login.js';
+import StatusCode from '../constants/status-code.js';
 
 const route = express.Router();
 
-route.get('/getVersionList', isLogin, (req, res) => {
+route.get('/getDataList', isLogin, (req, res) => {
     const { page, size } = req.query;
-    res.json({
-        code: 200,
-        data: {
-            list: datapager(page, size, versionList),
-            total: versionList.length
-        },
-    })
+    res.json(new ResponseResult(
+        StatusCode.SUCCESS,
+        "",
+        {
+            list: datapager(page, size, DataList),
+            total: DataList.length
+        }
+    ));
 });
 
 export default route;

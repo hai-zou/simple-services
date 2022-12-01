@@ -4,7 +4,7 @@
  */
 import Mock from "mockjs";
 
-export const { list: versionList } = Mock.mock({
+export const { list: DataList } = Mock.mock({
     'list|60': [
         {
             id: '@increment(1)',
