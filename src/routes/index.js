@@ -1,7 +1,7 @@
 import express from "express";
 import { datapager, ResponseResult } from "../utils/index.js";
 import { DataList } from "../database/mock.js";
-import isLogin from "../utils/is-login.js";
+import isLogin from "../middlewares/is-login.js";
 import StatusCode from "../constants/status-code.js";
 
 const route = express.Router();

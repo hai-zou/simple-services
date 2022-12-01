@@ -2,7 +2,7 @@ import express from "express";
 import multer from "multer";
 import path from "path";
 import fs from "fs";
-import isLogin from "../utils/is-login.js";
+import isLogin from "../middlewares/is-login.js";
 import StatusCode from "../constants/status-code.js";
 import { ResponseResult } from "../utils/index.js";
 
