@@ -12,7 +12,7 @@ cd simple-services
 npm install 或 yarn install
 
 # 启动项目
-npm run dev 或 yarn dev
+npm run start 或 yarn start
 ```
 
 ## 项目架构
