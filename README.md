@@ -17,6 +17,7 @@ npm run dev 或 yarn dev
 
 ## 项目架构
 ```
+├── __tests__ 单元测试
 ├── database 数据存放
 ├── src *重点, 项目工程入口
     ├── constants 常量
@@ -24,7 +25,6 @@ npm run dev 或 yarn dev
     ├── routes 接口
     ├── utils 工具库
     └── main.js 入口文件
-├── test 单元测试
 ├── .editorconfig 编辑器配置
 ├── .eslintrc.json eslint配置
 ├── nodemon.json 热更新配置

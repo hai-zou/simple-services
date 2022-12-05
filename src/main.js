@@ -38,3 +38,5 @@ app.listen(port, () => {
     const local = `- Local: http://localhost:${port}`;
     console.log([header, local].join("\n"));
 });
+
+export default app;

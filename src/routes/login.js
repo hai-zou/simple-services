@@ -1,6 +1,6 @@
 import express from "express";
 import jwt from "jsonwebtoken";
-import userList from "#database/users.js";
+import userList from "../../database/users.js";
 import StatusCode from "../constants/status-code.js";
 import { ResponseResult } from "../utils/index.js";
 
