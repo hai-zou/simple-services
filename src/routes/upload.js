@@ -7,7 +7,7 @@ import StatusCode from "../constants/status-code.js";
 import { ResponseResult } from "../utils/index.js";
 
 const route = express.Router();
-const upload = multer({ dest: "uploads/" });
+const upload = multer({ dest: "database/uploads/" });
 
 /**
  * 单文件上传
