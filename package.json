@@ -18,6 +18,9 @@
     },
     "homepage": "https://github.com/hizo-relax/simple-services#readme",
     "type": "module",
+    "imports": {
+        "#database/*": "./database/*"
+    },
     "dependencies": {
         "body-parser": "^1.20.1",
         "cookie-parser": "^1.4.6",

@@ -2,9 +2,9 @@
  * 判断用户是否登录的中间件
  */
 import jwt from "jsonwebtoken";
-import userList from "../database/users.js";
+import userList from "#database/users.js";
 import StatusCode from "../constants/status-code.js";
-import { ResponseResult } from "./index.js";
+import { ResponseResult } from "../utils/index.js";
 
 export default function isLogin(req, res, next) {
     const { token } = req.cookies;
