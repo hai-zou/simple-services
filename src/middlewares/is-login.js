@@ -1,6 +1,11 @@
-/**
- * 判断用户是否登录的中间件
+/*
+ * @Description: 判断用户是否登录的中间件
+ * @Author: Hizo
+ * @Date: 2022-12-06 09:50:13
+ * @LastEditors: Hizo
+ * @LastEditTime: 2023-01-12 15:32:42
  */
+
 import jwt from "jsonwebtoken";
 import userList from "../../database/users.js";
 import StatusCode from "../constants/status-code.js";

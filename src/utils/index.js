@@ -1,5 +1,5 @@
 /**
- * 分页函数
+ * @description 分页函数
  * @param {*} page 页码
  * @param {*} size 条数
  * @param {*} list 列表数据

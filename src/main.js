@@ -15,19 +15,23 @@ const __dirname = path.resolve();
  * 详细配置参考：https://github.com/expressjs/cors
  */
 app.use(cors({ "origin": true, "credentials": true }));
+
 /**
  * 解析请求体
  * 详细配置参考：https://github.com/expressjs/body-parser
  */
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
 /**
  * 解析Cookies
  * 详细配置参考：https://github.com/expressjs/cookie-parser
  */
 app.use(cookieParser());
+
 // 注册路由
 app.use(MockRoute, UploadRoute, LoginRoute);
+
 //开放静态资源
 app.use("/uploads", express.static(__dirname + "/uploads"));
 
