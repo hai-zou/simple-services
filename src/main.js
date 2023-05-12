@@ -33,7 +33,7 @@ app.use(cookieParser());
 app.use(MockRoute, UploadRoute, LoginRoute);
 
 //开放静态资源
-app.use("/uploads", express.static(__dirname + "/uploads"));
+app.use("/uploads", express.static(__dirname + "/database/uploads"));
 
 // 监听端口
 const port = 3000;
