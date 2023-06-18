@@ -4,7 +4,7 @@ import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import path  from "path";
 import MockRoute from "./src/routes/index.js";
-import UploadRoute from "./src/routes/upload.js";
+// import UploadRoute from "./src/routes/upload.js";
 import LoginRoute from "./src/routes/login.js";
 import process from "node:process";
 
@@ -31,7 +31,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // 注册路由
-app.use(MockRoute, UploadRoute, LoginRoute);
+app.use(MockRoute, LoginRoute);
 
 //开放静态资源
 app.use("/uploads", express.static(__dirname + "/database/uploads"));
