@@ -3,9 +3,10 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import path  from "path";
-import MockRoute from "./routes/index.js";
-import UploadRoute from "./routes/upload.js";
-import LoginRoute from "./routes/login.js";
+import MockRoute from "./src/routes/index.js";
+import UploadRoute from "./src/routes/upload.js";
+import LoginRoute from "./src/routes/login.js";
+import process from "node:process";
 
 const app = express();
 const __dirname = path.resolve();
@@ -37,7 +38,7 @@ app.use("/uploads", express.static(__dirname + "/database/uploads"));
 app.use("/", express.static(__dirname + "/public"));
 
 // 监听端口
-const port = 3000;
+const port = process.env.PORT || 4000;
 app.listen(port, () => {
     const header = "Server is now running at:";
     const local = `- Local: http://localhost:${port}`;
