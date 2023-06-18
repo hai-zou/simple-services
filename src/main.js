@@ -34,6 +34,7 @@ app.use(MockRoute, UploadRoute, LoginRoute);
 
 //开放静态资源
 app.use("/uploads", express.static(__dirname + "/database/uploads"));
+app.use("/", express.static(__dirname + "/public"));
 
 // 监听端口
 const port = 3000;
