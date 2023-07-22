@@ -3,9 +3,9 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import path  from "path";
-import MockRoute from "./routes/index.js";
+import MockRoute from "./src/routes/index.js";
 // import UploadRoute from "./src/routes/upload.js";
-import LoginRoute from "./routes/login.js";
+import LoginRoute from "./src/routes/login.js";
 import process from "node:process";
 
 const app = express();
